@@ -1,5 +1,5 @@
 <template>
-  <div class="modal1" v-if="show_modal">
+  <teleport to="#models" class="modal1" v-if="show_modal">
     <Modal status="" @close="toggleModal">
       <h1>{{ modal_header }}</h1>
       <p>{{ modal_p_text }}</p>
@@ -8,9 +8,9 @@
         <a href="#">sign in</a>
       </template>
     </Modal>
-  </div>
+  </teleport>
 
-  <div class="modal2" v-if="show_info_modal">
+  <teleport to="#models" class="modal2" v-if="show_info_modal">
     <Modal @close="toggleInfoModal">
       <h1>{{ info_modal_heading }}</h1>
       <p>{{ info_modal_text }}</p>
@@ -19,7 +19,7 @@
         <a href="#">next task</a>
       </template>
     </Modal>
-  </div>
+  </teleport>
 
   <h1>{{ title }}</h1>
 
@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, #models{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
